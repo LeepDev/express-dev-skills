@@ -1,0 +1,18 @@
+<%- include ../partials/aboveBody.ejs %>
+
+<nav><a href="/">HOME</a> | <a href="/developers">ALL DEVS</a></nav>
+
+<h1>Dev: <%= dev.name %></h1>
+ID: <%= dev.id %>
+<br>
+<br>
+Skills:
+<ol>
+  <% dev.skills.forEach(skill => { %>
+    <li>
+      <%= skill %>
+    </li>
+  <% }) %>
+</ol>
+
+<%- include ../partials/belowBody.ejs %>
