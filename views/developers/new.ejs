@@ -1,0 +1,21 @@
+<%- include ../partials/aboveBody.ejs %>
+
+<nav><a href="/">HOME</a> | <a href="/developers">ALL DEVS</a></nav>
+
+<h1>Create New Dev</h1>
+<form action="/developers" method="POST">
+  <label>
+    Name: 
+    <input type="text" class="form-control" name="name">
+  </label><br>
+  <sub>(You can enter multiple skills seperated by comma and no spaces)</sub><br>
+  <label>
+    Skills:
+    <input type="text" class="form-control" name="skills" multiple size="50">
+  </label>
+  <br>
+  <br>
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<%- include ../partials/belowBody.ejs %>

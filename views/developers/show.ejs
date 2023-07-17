@@ -7,12 +7,28 @@ ID: <%= dev.id %>
 <br>
 <br>
 Skills:
-<ol>
+<br>
+<br>
+<ol class="list-unstyled list-group">
   <% dev.skills.forEach(skill => { %>
     <li>
-      <%= skill %>
+      <form
+        action="/developers/<%= dev.id %>/<%= skill %>?_method=DELETE"
+        method="POST" class="mr-1 inline-block">
+        <button class="btn btn-danger btn-sm" type="submit">X</button>
+        <span class="m-3"><%= skill %></span>
+      </form>
     </li>
   <% }) %>
 </ol>
+<br>
+<a href="/developers/<%= dev.id %>/edit">Edit Dev</a>
+<br>
+<form
+        action="/developers/<%= dev.id %>?_method=DELETE"
+        method="POST"
+      >
+  <button class="btn btn-danger" type="submit">Delete Dev</button>
+</form>
 
 <%- include ../partials/belowBody.ejs %>
